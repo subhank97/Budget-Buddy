@@ -1,18 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 
 const BudgetsContext = React.createContext()
 
 export function useBudgets(){
     return useContext(BudgetsContext)
 }
-
+// { Budget
+//     id:
+//     name:
+//     max:
+// }
+// { Exepense
+//     id:
+//     budgetId:
+//     amount:
+//     description:
+// }
 export const BudgetsProvider = ({ children }) => {
-    const budgets = []
-    const expenses = []
+    const [budgets, setBudgets] = useState([]) 
+    const [expenses, setExpenses] = useState([])
 
-    function getBudgetExpenses(){
-
+    function getBudgetExpenses(budgetId){
+        return expenses.filter(expense => expense.budgetId === budgetId)
     }
+    
     function addExpense(){
         
     }
