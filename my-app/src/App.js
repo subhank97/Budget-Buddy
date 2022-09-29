@@ -1,9 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import { Stack, Button } from 'react-bootstrap';
 import BudgetCard from './Components/BudgetCard';
+import BudgetModal from './Components/BudgetModal';
+
 
 function App() {
   return (
+    <div>
     <Container className='my-4'>
       <Stack direction="horizontal" gap="2" className='mb-4'>
         <h1 className='me-auto'>Budget Buddy</h1>
@@ -15,6 +18,8 @@ function App() {
         <BudgetCard name="Entertainment" amount={250} max={1000}></BudgetCard>
       </div>
     </Container>
+    <BudgetModal show></BudgetModal>
+    </div>
   );
 }
 
