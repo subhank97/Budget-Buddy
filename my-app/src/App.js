@@ -5,6 +5,7 @@ import BudgetModal from './Components/BudgetModal';
 import { useState } from 'react';
 import { useBudgets } from './Contexts/BudgetContext';
 import ExpenseModal from './Components/ExpenseModal';
+import UncategorizedBudgetCard from './Components/UncategorizedBudgetCard';
 
 
 function App() {
@@ -39,10 +40,11 @@ function App() {
               max={budget.max}
               addExpenseClick={() => openExpenseModal(budget.id)} />
         })}
+        <UncategorizedBudgetCard />
       </div>
     </Container>
     <BudgetModal show={showBudgetModal} handleClose={() => setShowBudgetModal(false)}></BudgetModal>
-    <ExpenseModal show={showExpenseModal} handleClose={() => setShowExpenseModal} 
+    <ExpenseModal show={showExpenseModal} handleClose={() => setShowExpenseModal(false)} 
                   defaultBudgetId={addExpenseModal}></ExpenseModal>
     </div>
   );
