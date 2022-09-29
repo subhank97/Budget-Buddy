@@ -2,11 +2,7 @@ import React, { useContext } from 'react'
 import { v4 } from 'uuid'
 import useLocalStorage from '../Hooks/useLocalStorage'
 
-const BudgetsContext = React.createContext()
 
-export function useBudgets(){
-    return useContext(BudgetsContext)
-}
 // { Budget
 //     id:
 //     name:
@@ -18,6 +14,13 @@ export function useBudgets(){
 //     amount:
 //     description:
 // }
+
+const BudgetsContext = React.createContext()
+
+export function useBudgets(){
+    return useContext(BudgetsContext)
+}
+
 export const BudgetsProvider = ({ children }) => {
     const [budgets, setBudgets] = useLocalStorage("budgets",[]) 
     const [expenses, setExpenses] = useLocalStorage("expenses",[])
