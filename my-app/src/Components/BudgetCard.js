@@ -4,7 +4,7 @@ import { currencyFormatter } from './Utility'
 
 
 
-export default function BudgetCard({ name, amount, max }) {
+export default function BudgetCard({ name, amount, max, addExpenseClick }) {
   return (
     <Card>
         <Card.Body>
@@ -18,7 +18,7 @@ export default function BudgetCard({ name, amount, max }) {
         </Card.Body>
         <ProgressBar className='rounded-pill'></ProgressBar>
         <Stack direction='horizontal' gap={2} className="mt-4">
-            <Button variant="outline-primary" className="ms-auto">Add Expense</Button>
+            <Button variant="outline-primary" className="ms-auto" onClick={addExpenseClick}>Add Expense</Button>
             <Button variant="outline-secondary">View Expense</Button>
         </Stack>
     </Card>
